@@ -19,7 +19,7 @@ void help() {// funcion que dibuja informacion acerca de los comandos del progra
     std::cout << tab; std::cout << ("->h           "); std::cout << ("'ayuda....listado de comandos....'");std::cout << ("| ->procesos    ");   cout << (" 'Despliega los procesos '") << endl;
     std::cout << tab; std::cout << ("->cls         "); std::cout << ("'limpia pantalla consola.........'");std::cout << ("| ->modificar   ");   cout << (" 'modifica un proceso    '") << endl;
     std::cout << tab; std::cout << ("->salir       "); std::cout << ("'Cierra la aplicaciòn............'");std::cout << ("| ->            ");   cout << (" 'en desarrollo ...      '") << endl;
-	std::cout << tab; std::cout << ("->rr          "); std::cout << ("'Ejecuta el algoritmo RoundRobin'"); std::cout << ("| ->restablecer");   cout << (" 'Reinicia todos los procesos..'") << endl;
+	std::cout << tab; std::cout << ("->rr          "); std::cout << ("'Ejecuta el algoritmo RoundRobin' "); std::cout << ("| ->restablecer");   cout << (" 'Reinicia todos los procesos..'") << endl;
 	std::cout << endl;
 
 }
@@ -75,6 +75,24 @@ void color(int color) {
     
 }
 
+void barprogress(int bar) {
+	switch (bar)
+	{
+	case 1: color(1); cout << "[###---------------------------]"; break;
+	case 2: color(1); cout << "[######------------------------]"; break;
+	case 3: color(1); cout << "[#########---------------------]"; break;
+	case 4: color(1); cout << "[############------------------]"; break;
+	case 5: color(1); cout << "[###############---------------]"; break;
+	case 6: color(1); cout << "[##################------------]"; break;
+	case 7: color(1); cout << "[#####################---------]"; break;
+	case 8: color(1); cout << "[########################------]"; break;
+	case 9: color(1); cout << "[###########################---]"; break;
+	case 10: color(1); cout << "[##############################]"; break;
+
+	}
+
+
+}
 
 
 void gotoxy(int x, int y)//funcion gotoxy....para tabular las visulizacionesss..... vertical e horizontal....

@@ -65,6 +65,10 @@ struct procesos procesosini[] = {
 };
 
 
+
+
+
+
 // funciones/procedemitos que  utiliza el programa.............................
 
 void cargarprocesos() { // funcion que visualiza la carga de procesoss...a la aplicacion....
@@ -75,8 +79,7 @@ void cargarprocesos() { // funcion que visualiza la carga de procesoss...a la ap
 	int porcentaje = 10;
 	int idproc = 0;
 	//"Bloqueado","Iniciando","Ejecuntado", "Terminado", "Prueba" ;
-	cout << tab << tab << "  Cargando procesos................... ! espere....." << endl;
-	cout << tab << tab << " _____________________________________________________" << endl;
+	gotoxy(30, 22); cout << tab << tab << "  Cargando procesos.............. ! espere.....";
 
 	for (int i = 0; i < NUMPROCESOS; i++)
 	{
@@ -84,13 +87,10 @@ void cargarprocesos() { // funcion que visualiza la carga de procesoss...a la ap
 		int ale = 1 + rand() % 4;
 		modificacioncarga(idproc, ale);//carga el estado aleatroio
 		idproc = idproc++;
-		cout << tab << tab << tab << "Cargando ....... [" << porcentaje << "-% ]......." << endl;
+		gotoxy(40, 25); barprogress(i + 1); cout << porcentaje << "-%";
 		porcentaje = porcentaje + 10;
 		Sleep(600);
 	}
-
-	cout << tab << tab << " ______________________________________________________" << endl;
-	cout << tab << tab << "       Carga de procesos finalizado....!!!          " << endl;
 	Sleep(600);
 }
 
@@ -98,22 +98,21 @@ void cargarprocesosauto() { // funcion que visualiza la carga de procesoss...a l
 	//procesos *Procesocarga = new procesos; // define la estructura y crea una estructa de tipo nodo para carga los registros....
 	//Procesocarga = procesosini; // carga los elementos inicializados a la estructura nodo creado......					
 	system("color 0A");
+	system("cls");
 	char tab = '\t';
 	int porcentaje = 10;
 	int idproc = 0;
-	cout << tab << tab << "  Reiniciando procesos........... ! espere....." << endl;
+	gotoxy(30, 22); cout << tab << tab << "  Reiniciando procesos........... ! espere....." << endl;
 	for (int i = 0; i < NUMPROCESOS; i++)
 	{
 		srand((unsigned)time(NULL));//obtener el numero aleatroio
 		int ale = 1 + rand() % 4;
 		modificacioncarga(idproc, ale);//carga el estado aleatroio
 		idproc = idproc++;
-		cout << tab << tab << tab << "Cargando ....... [" << porcentaje << "-% ]......." << endl;
+		gotoxy(40, 25); barprogress(i + 1); cout << porcentaje << "-%";
 		porcentaje = porcentaje + 10;
 		Sleep(100);
 	}
-	cout << tab << tab << " ______________________________________________________" << endl;
-	cout << tab << tab << "       Carga de procesos finalizado....!!!          " << endl;
 	Sleep(200);
 }
 
@@ -1001,25 +1000,25 @@ void planificacionRoundRobin() {
 	system("cls");
 	gotoxy(40, 4); cout << " Cargando Procesos... espere..!";
 	ta = 4;
-	gotoxy(38, 6); cout << ("[===---------------------------]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[===---------------------------]")<<" 10-%"; Sleep(200);
 	tb = 3;
-	gotoxy(38, 6); cout << ("[======-------------------------]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[======-------------------------]") << " 20-%"; Sleep(200);
 	tc = 10;
-	gotoxy(38, 6); cout << ("[=========----------------------]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[=========----------------------]") << " 30-%"; Sleep(200);
 	td = 8;
-	gotoxy(38, 6); cout << ("[============-------------------]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[============-------------------]") << " 40-%"; Sleep(200);
 	te = 6;
-	gotoxy(38, 6); cout << ("[===============----------------]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[===============----------------]") << " 50-%"; Sleep(200);
 	tf = 1;
-	gotoxy(38, 6); cout << ("[==================-------------]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[==================-------------]") << " 600-%"; Sleep(200);
 	tg = 7;
-	gotoxy(38, 6); cout << ("[=====================----------]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[=====================----------]") << " 70-%"; Sleep(200);
 	th = 9;
-	gotoxy(38, 6); cout << ("[========================-------]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[========================-------]") << " 80-%"; Sleep(200);
 	ti = 2;
-	gotoxy(38, 6); cout << ("[===========================----]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[===========================----]") << " 90-%"; Sleep(200);
 	tj = 1;
-	gotoxy(38, 6); cout << ("[===============================]"); Sleep(200);
+	gotoxy(38, 6); cout << ("[===============================]") << "100-%"; Sleep(200);
 	Sleep(200);
 	Sleep(1000);
 	system("cls");
@@ -1061,7 +1060,6 @@ void planificacionRoundRobin() {
 	} while (ta > 0 || tb > 0 || tc > 0 || td > 0 || te > 0 || tf > 0 || tg > 0 || th > 0 || ti > 0 || tj > 0);
 	procesosIni();
 	procesosFin();
-	pausar();
 }
 
 
@@ -1353,7 +1351,7 @@ void modulos()
 			if (v7 == 0)
 			{
 				cargarprocesosauto();
-				cout << endl;
+				system("cls");
 				
 			}
 			else

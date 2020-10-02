@@ -16,3 +16,4 @@ void infoexplorer();
 void infodllhost();
 void infolsass();
 void infoservices();
+void barprogress(int bar);
