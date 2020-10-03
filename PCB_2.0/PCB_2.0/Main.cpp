@@ -982,15 +982,15 @@ void dibuja()
 	color(2);
 	gotoxy(42, 3); printf("   PROCESADOS    ");
 	gotoxy(31, 4); printf("ษอออหอออหอออหอออหอออหอออหอออหอออหอออหอออป");
-	gotoxy(31, 5); printf("บ   บ   บ   บ   บ   บ   บ   บ   บ   บ ");
-	gotoxy(31, 6); printf("ศอออสอออสอออสอออหอออหอออหอออหอออหอออหอออผ");
+	gotoxy(31, 5); printf("บ   บ   บ   บ   บ   บ   บ   บ   บ   บ   บ");
+	gotoxy(31, 6); printf("ศอออสอออสอออสอออสอออสอออสอออสอออสอออสอออผ");
 	gotoxy(42, 7); printf("    ษอออออออป    ");
 	gotoxy(42, 8); printf("    บ C P U บ    ");
 	gotoxy(42, 9); printf("    บ       บ    ");
 	gotoxy(42, 10); printf("    ศอออออออผ    ");
 	gotoxy(31, 11); printf("ษอออหอออหอออหอออหอออหอออหอออหอออหอออหอออป");
-	gotoxy(31, 12); printf("บ A บ B บ C บ D บ E บ F บ G บ H บ I บ J");
-	gotoxy(31, 13); printf("ศอออสอออสอออสอออหอออหอออหอออหอออหอออหอออผ");
+	gotoxy(31, 12); printf("บ A บ B บ C บ D บ E บ F บ G บ H บ I บ J บ");
+	gotoxy(31, 13); printf("ศอออสอออสอออสอออสอออสอออสอออสอออสอออสอออผ");
 	gotoxy(42, 14); printf("   POR PROCESAR  ");
 }
 
